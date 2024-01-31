@@ -1,0 +1,27 @@
+preset: package
+
+namespace: Karabin\Confetti
+user-auth-model: App\Models\User
+
+paths:
+  src: src
+  resource: resources
+
+factory:
+  path: database/factories
+
+migration:
+  path: database/migrations
+  prefix: ''
+
+console:
+  namespace: Karabin\Confetti\Console
+
+model:
+  namespace: Karabin\Confetti\Models
+
+provider:
+  namespace: Karabin\Confetti\Providers
+
+testing:
+  namespace: Karabin\Confetti\Tests
