@@ -32,6 +32,7 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'token' => env('CONFETTI_API_KEY', ''),
 ];
 ```
 
