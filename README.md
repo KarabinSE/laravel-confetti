@@ -31,9 +31,42 @@ return [
 
 ## Usage
 
+Get all events
 ```php
-$confetti = new Karabin\Confetti();
-echo $confetti->echoPhrase('Hello, Karabin!');
+use Karabin\Confetti\Facades\Confetti;
+
+$params = [
+    'filter[signupType]' => 'rsvp',
+    'filter[type]' => 'future',
+    'page[size]' => 10,
+    'page[number]' => $request->input('page', 1),
+    'include' => 'categories,pages,pages.blocks,pages.blocks.images,images.image',
+];
+$events = Confetti::getEvents($params);
+```
+
+Get open events
+```php
+use Karabin\Confetti\Facades\Confetti;
+
+$params = [
+    'filter[signupType]' => 'rsvp',
+    'filter[type]' => 'future',
+    'page[size]' => 10,
+    'page[number]' => $request->input('page', 1),
+    'include' => 'categories,pages,pages.blocks,pages.blocks.images,images.image',
+];
+$events = Confetti::getOpenEvents($params);
+```
+
+Get single event
+```php
+use Karabin\Confetti\Facades\Confetti;
+
+$params = [
+    'include' => 'categories,pages,pages.blocks,pages.blocks.images,images.image',
+];
+$event = Confetti::getEvent($id, $params);
 ```
 
 ## Testing
